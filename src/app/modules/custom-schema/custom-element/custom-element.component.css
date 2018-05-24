@@ -1,0 +1,59 @@
+@import url("../custom-schema.component.css");
+.config-input {
+  width: 100%;
+  -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
+  transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
+}
+
+.config-text-area {
+  border-radius: 0 !important;
+  border: 1px solid #d0d0c9 !important;
+  padding: 8px;
+  font-size: 14px !important;
+  font-family: 'openSans regular';
+  width: 100%;
+}
+
+.config-label {
+  width: 100%;
+  font-family: 'openSans regular';
+  font-size: 12px;
+  font-weight: 400 !important;
+  color: #717061;
+  word-wrap: break-word;
+}
+
+.date {
+  width: 140px;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.margin15px {
+  margin-right: 15px;
+}
+
+.margin-left-15 {
+  margin-left: 15px;
+}
+
+.padding-top-20px {
+  padding-top: 20px;
+}
+
+.pull-left {
+  float: left !important;
+}
+
+.white-strip {
+  width: 100%;
+  height: 15px;
+  background-color: #fff;
+}
+
+.mandatory-asterik {
+  color: red;
+  font-weight: 700;
+}

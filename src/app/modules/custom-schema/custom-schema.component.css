@@ -1,0 +1,43 @@
+.schema-container {
+  width: 1400px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  background-color: #fff;
+}
+
+.section-container {
+  display: flex;
+  flex-wrap: wrap;
+  float: left;
+  padding-bottom: 20px;
+}
+
+.secondary-heading,
+.secondary-heading:hover {
+  font-size: 26px;
+  font-family: 'titilium regular';
+  color: #000;
+  text-decoration: none !important;
+  width: 100%;
+  float: left;
+}
+
+/**/
+.prod-config-container {
+  padding: 0 30px;
+}
+
+.prod-config-detail {
+  float: left;
+  width: 1250px;
+  background-color: #fff;
+  margin: 50px 45px 0 50px;
+}
+
+.subscription {
+  float: left;
+  margin-right: 25px;
+  width: 100%;
+  background-color: #f6f6f1;
+  padding: 25px;
+}

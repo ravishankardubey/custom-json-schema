@@ -1,0 +1,65 @@
+<div *ngFor="let key of keys" [formGroup]="productConfigForm">
+
+  <!-- IF element type is OBJECT AGAIN, recall the component -->
+  <div *ngIf="properties[key].type === 'object'" class="padding-top-20px">
+    <h2 class="secondary-heading margin-left-15">{{properties[key].title}}</h2>
+    <app-custom-element [productConfigForm]="productConfigForm.get(key)" class="section-container" [ngStyle]="properties[key].style"
+      [properties]="properties[key].properties"></app-custom-element>
+  </div>
+
+  <!-- Input Field : TEXT -->
+  <div *ngIf="properties[key].fieldType === 'text'" class="pull-left margin-left-15  padding-top-20px" [ngStyle]="properties[key].style">
+    <label class="config-label uppercase">{{properties[key].title}}
+      <span class="mandatory-asterik" *ngIf="properties[key].required">*</span>
+    </label>
+    <input [formControlName]="key" type="text" class=" config-input" [name]="key" [id]="key">
+    <app-show-error [control]="productConfigForm.controls[key]"></app-show-error>
+  </div>
+
+  <!-- Input Field : TEXTAREA -->
+  <div *ngIf="properties[key].fieldType === 'textarea'" class="pull-left margin-left-15  padding-top-20px" [ngStyle]="properties[key].style">
+    <label class="config-label uppercase">{{properties[key].title}}
+      <span class="mandatory-asterik" *ngIf="properties[key].required">*</span>
+    </label>
+    <textarea [formControlName]="key" class=" config-text-area" [maxlength]="properties[key].maxLength" [cols]="properties[key].cols" [rows]="properties[key].rows"
+      [name]="key" [id]="key"></textarea>
+      <app-show-error [control]="productConfigForm.controls[key]"></app-show-error>
+  </div>
+
+  <!-- Input Field : CHECKBOX -->
+  <div *ngIf="properties[key].fieldType === 'checkbox'" class="pull-left margin-left-15 padding-top-20px" [ngStyle]="properties[key].style">
+    <label class="config-label uppercase">{{properties[key].title}}
+      <span class="mandatory-asterik" *ngIf="properties[key].required">*</span>
+    </label>
+    <div class="onoffswitch1">
+      <input [formControlName]="key" type="checkbox" class="onoffswitch1-checkbox" [name]="key" [id]="key" checked="">
+      <label class="onoffswitch1-label" [for]="key">
+        <span class="onoffswitch1-inner"></span>
+        <span class="onoffswitch1-switch"></span>
+      </label>
+    </div>
+    <app-show-error [control]="productConfigForm.controls[key]"></app-show-error>
+  </div>
+
+  <!-- Input Field : SELECT -->
+  <div *ngIf="properties[key].fieldType === 'select'" class="pull-left margin-left-15  padding-top-20px" [ngStyle]="properties[key].style">
+    <label class="config-label uppercase">{{properties[key].title}}
+      <span class="mandatory-asterik" *ngIf="properties[key].required">*</span>
+    </label>
+    <select [formControlName]="key" class=" config-input" [name]="key" [id]="key">
+      <option *ngFor="let lovs of properties[key].LOVS">{{lovs}}</option>
+    </select>
+    <app-show-error [control]="productConfigForm.controls[key]"></app-show-error>
+  </div>
+
+  <!-- Input Field : DATE -->
+  <div *ngIf="properties[key].fieldType === 'date'" class="pull-left margin-left-15  padding-top-20px date" [ngStyle]="properties[key].style">
+    <div>
+      <label class="config-label uppercase">{{properties[key].title}}
+        <span class="mandatory-asterik" *ngIf="properties[key].required">*</span>
+      </label>
+      <my-date-picker class="my-date-picker" [options]="myDatePickerOptions" [formControlName]="key"></my-date-picker>
+    </div>
+    <app-show-error [control]="productConfigForm.controls[key]"></app-show-error>
+  </div>
+</div>

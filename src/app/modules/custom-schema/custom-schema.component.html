@@ -1,0 +1,42 @@
+<div *ngIf="schema">
+  <div class="row prod-config-container">
+    <div class="order-type-action no-margin-border-top">
+      <div class="col-md-4 action-btn-div">
+        <a class="ord-type-save-quit tracking-back" (click)="onClickBack()">
+          <i class="glyphicon glyphicon-backward"></i> Previous </a>
+        <button type="button" class="btn btn-tertiary" (click)="onClickQuit()">Quit</button>
+        <button type="button" class="btn btn-secondary" (click)="saveProductDetails()">Save As Draft</button>
+      </div>
+      <div class="col-md-4"> </div>
+      <div class="col-md-4 proceed-btn-div">
+        <button type="button" class="btn button-primary" (click)="onClickProceed()" [disabled]="productConfigForm.invalid">
+          {{proceedBtnText}}
+        </button>
+      </div>
+    </div>
+    <div class="order-type-step1">
+      <span class="step-number">2</span>
+      <h1>PRODUCT CONFIGURATION</h1>
+    </div>
+  </div>
+
+  <!-- custom schema -->
+  <div class="schema-container">
+    <app-custom-element class="section-container" [ngStyle]="schema.style" [properties]="schema.properties" [productConfigForm]="productConfigForm"></app-custom-element>
+  </div>
+
+  <div class="order-type-action no-border-bottom">
+    <div class="col-md-4 action-btn-div">
+      <a class="ord-type-save-quit tracking-back">
+        <i class="glyphicon glyphicon-backward"></i> Previous </a>
+      <button type="button" class="btn btn-tertiary" (click)="onClickQuit()">Quit</button>
+      <button type="button" class="btn btn-secondary" (click)="saveProductDetails()">Save As Draft</button>
+    </div>
+    <div class="col-md-4"> </div>
+    <div class="col-md-4 proceed-btn-div">
+      <button type="button" class="btn button-primary" (click)="onClickProceed()" [disabled]="productConfigForm.invalid">
+        {{proceedBtnText}}
+      </button>
+    </div>
+  </div>
+</div>
